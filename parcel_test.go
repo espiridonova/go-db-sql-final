@@ -61,6 +61,7 @@ func TestAddGetDelete(t *testing.T) {
 	err = store.Delete(number)
 	require.NoError(t, err)
 	p, err = store.Get(number)
+	require.Error(t, err)
 	assert.Error(t, err, notFoundErrorMsg)
 }
 
