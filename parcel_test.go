@@ -61,8 +61,7 @@ func TestAddGetDelete(t *testing.T) {
 	err = store.Delete(number)
 	require.NoError(t, err)
 	p, err = store.Get(number)
-	require.Error(t, err)
-	assert.Equal(t, err.Error(), notFoundErrorMsg)
+	assert.Error(t, err, notFoundErrorMsg)
 }
 
 // TestSetAddress проверяет обновление адреса
